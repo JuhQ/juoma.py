@@ -21,5 +21,16 @@ drinks = ["Beer", "Koskenkorva", "Whiskey", "Milk"];
 
 from random import randint
 
+winnerString = ""
+winner = 0
+
 for player in players:
-    print("{0} rolls {1} for drink {2}".format(player, randint(0,100), drinks[randint(0, len(drinks) - 1)]))
+    roll = randint(0,100)
+    
+    string = "{0} rolls {1} for drink {2}".format(player, roll, drinks[randint(0, len(drinks) - 1)])
+    print(string)
+    if roll > winner:
+        winner = roll
+        winnerString = string
+
+print("WINNER: {0}".format(winnerString))
